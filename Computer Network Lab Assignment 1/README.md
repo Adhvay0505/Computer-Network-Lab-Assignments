@@ -20,7 +20,9 @@ Mesh | Multiple paths, fault tolerant | Many cables | Excellent
 
 ## Screenshots
 ![Screenshot](Screenshot_2026-03-15_19-14-53.png)
-
+![Screenshot](Screenshot_2026-03-15_19-16-32.png)
+![Screenshot](Screenshot_2026-03-15_19-18-18.png)
+![Screenshot](Screenshot_2026-03-15_19-39-17.png)
 ## How to run
 1. Open Cisco Packet Tracer  
 2. Open any .pkt file  
