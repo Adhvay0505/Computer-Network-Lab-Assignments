@@ -19,9 +19,13 @@ Ring | Orderly access | One break = total failure | Medium
 Mesh | Multiple paths, fault tolerant | Many cables | Excellent
 
 ## Screenshots
+### Bus
 ![Screenshot](Screenshot_2026-03-15_19-14-53.png)
+### Star
 ![Screenshot](Screenshot_2026-03-15_19-16-32.png)
+### Ring
 ![Screenshot](Screenshot_2026-03-15_19-18-18.png)
+### Mesh
 ![Screenshot](Screenshot_2026-03-15_19-39-17.png)
 ## How to run
 1. Open Cisco Packet Tracer  
