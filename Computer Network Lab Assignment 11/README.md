@@ -1,12 +1,6 @@
 # 🌐 Web Server Simulation: HTTP and WWW Basics
 
-## 📌 Student Details
 
-* **Name:** Your Name
-* **Course:** Network Lab
-* **Assignment:** Web Server Simulation (HTTP & WWW Basics)
-
----
 
 # 📖 1. Objective
 
