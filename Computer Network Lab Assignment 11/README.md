@@ -144,6 +144,16 @@ Using Simulation Mode:
 
 ---
 
+# Screenshots
+<img width="1791" height="860" alt="Screenshot_2026-04-22_22-14-27" src="https://github.com/user-attachments/assets/57e8d243-31de-4c06-b376-f39eebbb0558" />
+
+<img width="1791" height="860" alt="Screenshot_2026-04-22_22-14-40" src="https://github.com/user-attachments/assets/1b1d91c5-6d7a-4974-83d3-a666068bd504" />
+
+<img width="831" height="515" alt="Screenshot_2026-04-22_22-14-58" src="https://github.com/user-attachments/assets/ee364003-e94c-42eb-a21e-dc1e308b8d7b" />
+
+<img width="1395" height="655" alt="Screenshot_2026-04-22_22-15-09" src="https://github.com/user-attachments/assets/a7a5f4f8-ffc0-4770-b17d-80c7377df8a4" />
+
+
 # ⚠️ 10. Challenges Faced
 
 * Ensuring correct IP configuration
