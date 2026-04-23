@@ -1,12 +1,5 @@
 # 🌐 IPv4, IPv6 and Address Mapping Simulation
 
-## 📌 Student Details
-
-* **Name:** Your Name
-* **Course:** Network Lab
-* **Assignment:** Logical Addressing and Address Mapping
-
----
 
 # 📖 1. Objective
 
