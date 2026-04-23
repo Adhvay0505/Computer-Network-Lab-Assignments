@@ -127,6 +127,7 @@ R1  -----------  R2
 * Ping from PC0 (LAN1) → PC2 (LAN2)
 
 ✔ Result: **Successful**
+<img width="635" height="254" alt="Screenshot_2026-04-23_12-04-20" src="https://github.com/user-attachments/assets/4e0b8b5f-d0da-4017-98d0-817cb2903bc4" />
 
 ---
 
