@@ -135,6 +135,8 @@ R1  -----------  R2
 * Used `show ip route`
 * Verified routes learned via RIP
 
+<img width="676" height="780" alt="Screenshot_2026-04-23_11-47-13" src="https://github.com/user-attachments/assets/81644c7e-7ffa-478b-aab1-1c4795181d4b" />
+
 ---
 
 # 📊 7. Observations
