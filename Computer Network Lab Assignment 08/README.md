@@ -43,6 +43,7 @@ PC0 ----\
          /
 PC1 ----/
 ```
+<img width="515" height="505" alt="Screenshot_2026-04-23_10-37-31" src="https://github.com/user-attachments/assets/e8bd4ec9-3bda-4885-9ab6-adea07ce3354" />
 
 ---
 
