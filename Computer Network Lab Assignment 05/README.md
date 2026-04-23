@@ -1,83 +1,198 @@
-# Experiment 5: Flow Control and Error Control Protocols (Stop-and-Wait, Go-Back-N ARQ, Selective Repeat ARQ)
+# 🌐 Flow Control and Error Control Protocols Simulation
 
-## 1. Network Topology Design
-- **Simple LAN topology** (as per assignment guidelines)
-- Devices used:
-  - PC0 (Sender)
-  - PC1 (Receiver)
-  - 1 × Switch (2960 or any generic switch)
-- All PCs connected to the switch using straight-through cables.
-- IP Configuration:
-  - PC0: 192.168.1.1 / 255.255.255.0
-  - PC1: 192.168.1.2 / 255.255.255.0
-- No routers or serial links were used to keep the simulation simple and focused only on protocol behavior.
+*(Stop-and-Wait, Go-Back-N ARQ, Selective Repeat ARQ)*
 
-**Files created:**
-- `stop_and_wait.pkt`
-- `go_back_n.pkt`
-- `selective_repeat_arq.pkt`
 
-## 2. Protocol Implementation & Simulation Method
-All simulations were done in **Cisco Packet Tracer Simulation Mode** using **ICMP (Simple PDU)** as frame proxies.
+# 📖 1. Objective
 
-**Common Steps for all protocols:**
-1. Switched to Simulation Mode.
-2. Edited filters → Only **ICMP** enabled.
-3. Used **Add Simple PDU** tool to generate traffic from PC0 to PC1.
-4. Used **Capture/Forward** button to step through packet flow.
-5. Simulated errors by **deleting PDUs** in the Event List (trash icon).
+The objective of this assignment is to simulate and analyze **flow control and error control protocols** including **Stop-and-Wait**, **Go-Back-N ARQ**, and **Selective Repeat ARQ**. The simulation demonstrates how data transmission reliability and efficiency are managed under different network conditions.
 
-### Stop-and-Wait ARQ (`stop_and_wait.pkt`)
-- Sent **one PDU at a time**.
-- Waited for Echo Reply (ACK) before sending the next packet.
-- Error simulation: Deleted one packet → observed timeout and retransmission of **only that packet**.
+---
 
-### Go-Back-N ARQ (`go_back_n_arq.pkt`)
-- Sent **multiple PDUs quickly** (6–10 packets) without waiting for individual ACKs.
-- **Explanation**: Go-Back-N allows the sender to send multiple frames before needing an acknowledgment, but if an error is detected, the sender retransmits **all frames starting from the erroneous frame**.
-- Error simulation: Deleted one packet in the middle → observed that the receiver discarded subsequent good frames and the sender retransmitted multiple frames from the bad one onward.
+# 🧠 2. Concepts Covered
 
-### Selective Repeat ARQ (`selective_repeat_arq.pkt`)
-- Sent **multiple PDUs quickly** (same as Go-Back-N).
-- **Explanation**: Selective Repeat allows the sender to send multiple frames. The receiver buffers out-of-order good frames and the sender retransmits **only the erroneous frame**.
-- Error simulation: Deleted one packet in the middle → observed retransmission of mainly the lost frame.
+* Flow Control Mechanisms
+* Error Control Protocols
+* Stop-and-Wait ARQ
+* Go-Back-N ARQ
+* Selective Repeat ARQ
+* Packet Loss and Retransmission
 
-**Note on Packet Tracer Limitation:**  
-Cisco Packet Tracer Simulation Mode does not fully implement receiver-side buffering or selective ACKs. Therefore, the visual difference between Go-Back-N and Selective Repeat is limited, but the number of retransmitted packets was observed and documented conceptually.
+---
 
-## 3. Performance Comparison
+# 🏗️ 3. Network Topology
 
-| Protocol            | Frames sent at once | On single error                     | Retransmitted frames | Efficiency (with errors) | Observation |
-|---------------------|---------------------|-------------------------------------|----------------------|--------------------------|-----------|
-| Stop-and-Wait       | 1                   | Only the bad frame                  | 1                    | Lowest                   | Very slow, safe |
-| Go-Back-N ARQ       | Multiple            | Bad frame + all after it            | Many                 | Medium                   | Wastes bandwidth |
-| Selective Repeat ARQ| Multiple            | **Only the bad frame**              | 1 (ideally)          | **Highest**              | Most efficient |
+A simple LAN topology was used to focus purely on protocol behavior:
 
-**Key Findings:**
-- Stop-and-Wait is simplest but has the lowest throughput because of constant waiting.
-- Go-Back-N improves utilization when there are no errors but performs poorly under errors.
-- Selective Repeat gives the best performance under error-prone conditions because only corrupted frames are retransmitted.
-- As network conditions (error rate) increase, Selective Repeat clearly outperforms the other two.
+* 2 PCs (Sender and Receiver)
+* 1 Switch
 
-## 4. How to Run the Simulations
-1. Open the respective `.pkt` file in Cisco Packet Tracer.
-2. Switch to **Simulation** mode.
-3. Click **Edit Filters** → enable only **ICMP**.
-4. Use **Add Simple PDU** to send traffic.
-5. Use **Capture/Forward** or **Auto Capture/Play** to observe.
-6. Delete PDUs in Event List to simulate errors.
+### 🔹 Logical Diagram
 
-## 5. Files Included
-- `stop_and_wait.pkt`
-- `go_back_n.pkt`
-- `selective_repeat_arq.pkt`
-- `output.txt` (detailed results)
-- `test_cases.txt`
-- This `README.md`
+```
+PC0 -------- SWITCH -------- PC1
+(Sender)                  (Receiver)
+```
 
-**Assumptions & Design Decisions:**
-- Used simple switch topology to focus purely on protocol behavior.
-- Manual PDU deletion was used to simulate packet loss/errors.
-- All simulations are repeatable using the same steps.
+---
 
-**Screenshots** of all three simulations (multiple packets, error deletion, retransmission) are available inside the Packet Tracer files (Event List captures).
+# 🔌 4. Network Configuration
+
+## 📍 IP Addressing
+
+| Device | IP Address  | Subnet Mask   |
+| ------ | ----------- | ------------- |
+| PC0    | 192.168.1.1 | 255.255.255.0 |
+| PC1    | 192.168.1.2 | 255.255.255.0 |
+
+---
+
+## 🔗 Cabling
+
+* Devices connected using **Copper Straight-Through cables**
+* Switch used for communication
+
+---
+
+# ⚙️ 5. Simulation Methodology
+
+All simulations were performed using **Cisco Packet Tracer** in **Simulation Mode**.
+
+### 🔹 Common Steps
+
+1. Switched to Simulation Mode
+2. Enabled only **ICMP** in filters
+3. Used **Add Simple PDU** for packet generation
+4. Used **Capture/Forward** to observe flow
+5. Simulated errors by deleting packets in Event List
+
+---
+
+# 🟡 6. Stop-and-Wait ARQ
+
+### 🔹 Implementation
+
+* Sent one packet at a time
+* Waited for acknowledgment before sending next
+
+### 🔍 Observations
+
+* Only one frame in transit
+* On packet loss → only that packet retransmitted
+
+### 📌 Conclusion
+
+* Simple but inefficient
+* Low throughput due to waiting
+
+---
+
+# 🔵 7. Go-Back-N ARQ
+
+### 🔹 Implementation
+
+* Sent multiple packets continuously
+* Did not wait for individual acknowledgments
+
+### 🔍 Observations
+
+* On packet loss → receiver discarded subsequent packets
+* Sender retransmitted multiple packets from error point
+
+### 📌 Conclusion
+
+* Better throughput than Stop-and-Wait
+* Inefficient under packet loss
+
+---
+
+# 🔴 8. Selective Repeat ARQ
+
+### 🔹 Implementation
+
+* Sent multiple packets continuously
+* Conceptual buffering assumed
+
+### 🔍 Observations
+
+* Only lost packet retransmitted (conceptually)
+* Better efficiency compared to Go-Back-N
+
+### ⚠️ Limitation
+
+* Full selective ACK and buffering not supported in Packet Tracer
+
+---
+
+# 📊 9. Performance Comparison
+
+| Protocol         | Frames Sent | Error Handling  | Retransmission | Efficiency |
+| ---------------- | ----------- | --------------- | -------------- | ---------- |
+| Stop-and-Wait    | 1           | Single frame    | 1              | Low        |
+| Go-Back-N        | Multiple    | All after error | Many           | Medium     |
+| Selective Repeat | Multiple    | Only lost frame | 1 (ideal)      | High       |
+
+---
+
+# 📊 10. Observations
+
+* Stop-and-Wait is reliable but slow
+* Go-Back-N improves utilization but wastes bandwidth under errors
+* Selective Repeat provides best efficiency in error-prone networks
+* Increasing error rate highlights advantages of Selective Repeat
+
+---
+
+# ⚠️ 11. Challenges Faced
+
+* Limited protocol-level implementation in simulation
+* Differentiating Go-Back-N and Selective Repeat visually
+* Simulating realistic packet loss
+
+---
+
+# 🚀 12. Improvements
+
+* Simulate higher traffic loads
+* Introduce delay or jitter
+* Analyze throughput quantitatively
+* Implement advanced retransmission strategies
+
+---
+
+# 🧾 13. Conclusion
+
+The simulation successfully demonstrated flow control and error control mechanisms. Stop-and-Wait showed simplicity but low efficiency, Go-Back-N improved performance but wasted bandwidth during errors, and Selective Repeat proved to be the most efficient protocol in handling packet loss.
+
+---
+
+# ▶️ 14. How to Run the Simulation
+
+1. Open `.pkt` file in Cisco Packet Tracer
+2. Switch to Simulation Mode
+3. Enable ICMP filter
+4. Use Add Simple PDU to send packets
+5. Use Capture/Forward to observe
+6. Delete packets to simulate errors
+
+---
+
+# 📁 15. Files Included
+
+* `stop_and_wait.pkt`
+* `go_back_n_arq.pkt`
+* `selective_repeat_arq.pkt`
+* `README.md`
+* `output.txt`
+* `test_cases.txt`
+
+---
+
+# 📌 Assumptions & Design Decisions
+
+* Simple topology used to isolate protocol behavior
+* ICMP packets used as frame representation
+* Packet deletion used to simulate errors
+* Selective Repeat analyzed conceptually due to tool limitations
+
+---
