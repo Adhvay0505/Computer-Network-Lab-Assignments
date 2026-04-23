@@ -1,12 +1,6 @@
 # 🌐 Sliding Window Protocol with Piggybacking Simulation
 
-## 📌 Student Details
 
-* **Name:** Your Name
-* **Course:** Network Lab
-* **Assignment:** Sliding Window Protocol with Piggybacking
-
----
 
 # 📖 1. Objective
 
