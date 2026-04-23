@@ -43,7 +43,8 @@ SW1               SW2
 R1  -----------  R2
         (WAN)
 ```
-<img width="1390" height="492" alt="Screenshot_2026-04-23_11-47-26" src="https://github.com/user-attachments/assets/51c13bc3-a931-4586-8754-6b33ffe70b19" />
+<img width="742" height="350" alt="Screenshot_2026-04-23_12-19-28" src="https://github.com/user-attachments/assets/eedb442b-de01-429d-a121-2864439cef4d" />
+
 
 
 ---
