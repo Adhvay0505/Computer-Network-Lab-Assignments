@@ -1,0 +1,151 @@
+# 📄 output.txt
+
+Network Performance Analysis Simulation Results
+Experiment: Packet Delay, Loss, Throughput & Routing Algorithms
+
+---
+
+1. Static Routing Results
+
+---
+
+Connectivity:
+PC0 → PC2 : SUCCESS
+PC1 → PC3 : SUCCESS
+
+Packet Delay:
+
+* Average Delay: Low
+
+Packet Loss:
+
+* 0% under low traffic
+* Minor loss under congestion
+
+Throughput:
+
+* Moderate
+
+Observations:
+
+* Manual route configuration successful
+* Stable communication
+* Limited scalability
+
+---
+
+2. RIP Routing Results
+
+---
+
+Connectivity:
+PC0 → PC2 : SUCCESS
+PC1 → PC3 : SUCCESS
+
+Packet Delay:
+
+* Moderate due to hop count updates
+
+Packet Loss:
+
+* Slightly higher under heavy traffic
+
+Throughput:
+
+* Moderate
+
+Observations:
+
+* Easy implementation
+* Slower convergence
+* Acceptable for smaller networks
+
+---
+
+3. OSPF Routing Results
+
+---
+
+Connectivity:
+PC0 → PC2 : SUCCESS
+PC1 → PC3 : SUCCESS
+
+Packet Delay:
+
+* Low
+
+Packet Loss:
+
+* Minimal
+
+Throughput:
+
+* High
+
+Observations:
+
+* Faster route adaptation
+* Better performance under load
+* Efficient path calculation
+
+---
+
+4. EIGRP Routing Results
+
+---
+
+Connectivity:
+PC0 → PC2 : SUCCESS
+PC1 → PC3 : SUCCESS
+
+Packet Delay:
+
+* Very Low
+
+Packet Loss:
+
+* Very Low
+
+Throughput:
+
+* Very High
+
+Observations:
+
+* Fastest convergence
+* Efficient bandwidth use
+* Best protocol performance
+
+---
+
+5. Comparative Summary
+
+---
+
+Static Routing:
+
+* Reliable
+* Manual management
+
+RIP:
+
+* Basic dynamic routing
+* Moderate efficiency
+
+OSPF:
+
+* Strong performance
+* Good scalability
+
+EIGRP:
+
+* Highest throughput
+* Lowest delay
+* Best overall performance
+
+---
+
+Final Conclusion:
+Routing protocol choice significantly impacts packet delay, packet loss, and throughput.
+EIGRP provided the best results, followed closely by OSPF.
+

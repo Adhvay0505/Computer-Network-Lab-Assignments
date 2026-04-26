@@ -1,0 +1,156 @@
+# 📄 test_cases.txt
+
+Network Simulator Test Cases
+Experiment: Routing Algorithm Performance Analysis
+
+---
+
+## Test Case 1: Basic Connectivity
+
+Objective:
+Verify end-to-end communication between all PCs.
+
+Procedure:
+
+* Ping between LANs
+
+Expected Result:
+
+* Successful replies
+* No packet loss
+
+Status:
+PASS
+
+---
+
+## Test Case 2: Static Routing Validation
+
+Objective:
+Verify manual routing configuration.
+
+Procedure:
+
+* Configure static routes
+* Ping remote hosts
+
+Expected Result:
+
+* Successful communication
+
+Status:
+PASS
+
+---
+
+## Test Case 3: RIP Routing Validation
+
+Objective:
+Verify RIP protocol operation.
+
+Procedure:
+
+* Enable RIP
+* Observe route propagation
+* Ping across networks
+
+Expected Result:
+
+* Dynamic route establishment
+* Successful communication
+
+Status:
+PASS
+
+---
+
+## Test Case 4: OSPF Routing Validation
+
+Objective:
+Verify OSPF dynamic routing.
+
+Procedure:
+
+* Configure OSPF
+* Observe neighbor relationships
+* Generate traffic
+
+Expected Result:
+
+* Faster convergence
+* Successful communication
+
+Status:
+PASS
+
+---
+
+## Test Case 5: EIGRP Routing Validation
+
+Objective:
+Verify EIGRP performance.
+
+Procedure:
+
+* Configure EIGRP
+* Test throughput
+
+Expected Result:
+
+* High throughput
+* Low delay
+
+Status:
+PASS
+
+---
+
+## Test Case 6: Packet Delay Analysis
+
+Objective:
+Measure delay under different protocols.
+
+Procedure:
+
+* Generate ICMP traffic
+* Record Event List timestamps
+
+Expected Result:
+
+* EIGRP < OSPF < Static < RIP
+
+Status:
+PASS
+
+---
+
+## Test Case 7: Packet Loss Analysis
+
+Objective:
+Measure dropped packets during congestion.
+
+Procedure:
+
+* Generate heavy traffic
+
+Expected Result:
+
+* Minimal packet loss in OSPF/EIGRP
+
+Status:
+PASS
+
+---
+
+Final Result:
+All routing algorithms successfully tested.
+
+Protocols Verified:
+✔ Static Routing
+✔ RIP
+✔ OSPF
+✔ EIGRP
+
+Overall Status:
+PASS
+

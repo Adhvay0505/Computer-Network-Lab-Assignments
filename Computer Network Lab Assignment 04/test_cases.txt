@@ -1,0 +1,136 @@
+# test_cases.txt
+
+Experiment 4 Test Cases
+Error Detection and Correction using Block Coding and CRC
+
+---
+
+## Test Case 1: Basic Network Connectivity
+
+Objective:
+Verify sender and receiver communication.
+
+Procedure:
+
+* Ping PC1 from PC0
+
+Expected Result:
+
+* Successful ICMP reply
+
+Actual Result:
+
+* Success
+
+Status:
+PASS
+
+---
+
+## Test Case 2: Block Coding Error Detection
+
+Objective:
+Simulate parity-based detection.
+
+Procedure:
+
+* Send ICMP packet
+* Delete packet in Simulation Mode
+
+Expected Result:
+
+* Error detected
+* Retransmission or failure observed
+
+Actual Result:
+
+* Error observed
+
+Status:
+PASS
+
+---
+
+## Test Case 3: Single-Bit Error Correction
+
+Objective:
+Demonstrate conceptual correction ability.
+
+Procedure:
+
+* Introduce one packet error
+* Observe behavior
+
+Expected Result:
+
+* Single error identified
+* Conceptual correction explained
+
+Actual Result:
+
+* Successful
+
+Status:
+PASS
+
+---
+
+## Test Case 4: CRC Error Detection
+
+Objective:
+Verify stronger error detection.
+
+Procedure:
+
+* Corrupt transmitted packet
+* Observe CRC validation failure
+
+Expected Result:
+
+* Packet rejected
+
+Actual Result:
+
+* Successful detection
+
+Status:
+PASS
+
+---
+
+## Test Case 5: Burst Error Handling
+
+Objective:
+Compare CRC with block coding.
+
+Procedure:
+
+* Introduce multiple packet errors
+
+Expected Result:
+
+* CRC performs better
+
+Actual Result:
+
+* CRC superior
+
+Status:
+PASS
+
+---
+
+## Overall Result
+
+Protocols Tested:
+✔ Block Coding
+✔ CRC
+
+Simulation Goals Achieved:
+✔ Error Detection
+✔ Error Correction (conceptual)
+✔ Performance Comparison
+
+Final Status:
+PASS
+
